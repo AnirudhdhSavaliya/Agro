@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Operators</h1>
+<h2>The typeof Operator</h2>
+
+<p>The typeof operator returns the type of a variable or an expression:</p>
+
+<p id="demo"></p>
+<h1>Data Type Checker</h1>
+
+<button type="button" onclick="data()">Check Data Type</button>
+<p id="result"></p>
+
+<script>
+     function data() {
+        var userInput = prompt("Enter something:");
+        var result;
+
+        if (userInput === null || userInput === "") {
+            result = "Input is empty";
+        } else if (!isNaN(userInput)) {
+            result = "Input is a number";
+        } else if (userInput.toLowerCase() === "true" || userInput.toLowerCase() === "false") {
+            result = "Input is a boolean";
+        } else {
+            result = "Input is a string";
+        }
+
+        alert(result);
+    }
+
+// document.getElementById("demo").innerHTML = 
+// "'John' is " + typeof "John" + "<br><br>" +
+// "('John' + 'Doe') is " + typeof ("John" + "Doe") + "<br><br>" +
+// "3.14 is " + typeof 3.14 + "<br><br>" +
+// "33 is " + typeof 33 + "<br><br>" +
+// "(33 + 66) is " + typeof (33 + 66) + "<br><br>" +
+// "NaN is " + typeof NaN + "<br><br>" +
+// "true is " + typeof true + "<br><br>" +
+// "false is " + typeof false + "<br><br>" +
+// "x is " + typeof x;
+
+// "<br>"
+
+let year = parseInt(prompt("Enter a year:"));
+if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+    console.log("The year " + year + " is a leap year.");
+} else {
+    console.log("The year " + year + " is not a leap year.");
+}
+
+// 4
+let n = prompt("Enter the base number (n):"); 
+let power = prompt("Enter the power (exponent):");
+
+let num = 1;
+for (let i = 0; i < power; ++i) {
+    num *= n; 
+}
+// 5
+let age = prompt("Enter your age:");
+
+if (age >= 18) {
+    console.log("You are eligible to vote.");
+} else {
+    console.log("You are not eligible to vote.");
+}
+
+console.log(num);
+// 6
+let p = parseFloat(prompt("Principal amount:"));
+let r = parseFloat(prompt("Annual interest rate (%):"));
+let t = parseFloat(prompt("Time (years):"));
+let s = parseInt(prompt("Times compounded per year:"));
+
+let a = p * (1 + (r / 100) / s) ** (s * t);
+let ci = a - p;
+
+console.log("Total amount: " + a.toFixed(2));
+console.log("Compound interest: " + ci.toFixed(2));
+
+
+
+   
+</script>
+
+</body>
+</html>
